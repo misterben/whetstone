@@ -3,8 +3,9 @@
 1. Introduction
 2. Dependencies
 3. Installation / Running
-4. Notes
-5. Comments / FAQ
+4. Upgrading from 0.0.1
+5. Notes
+6. Comments / FAQ
 
 =============================================
 
@@ -24,9 +25,9 @@ Most distributions will come preinstalled with:
 
 In addition, you will require:
  - pysqlite2
- - diatheke with ESV module
+ - diatheke
 
-Diatheke is a command-line front-end to the SWORD Project (http://www.crosswire.org/sword/). You will need to have the ESV module installed (future versions of Whetstone will allow for other Bibles to be used). If you prefer, you can install one of the other graphical frontends for Sword to help install the modules - Xiphos (Gtk-based) and BibleTime (Qt-based) are both good.
+Diatheke is a command-line front-end to the SWORD Project (http://www.crosswire.org/sword/). You will need to have a Bible translation installed too. If you prefer, you can install one of the other graphical frontends for Sword to help install the modules - Xiphos (Gtk-based) and BibleTime (Qt-based) are both good.
 
 =============================================
 
@@ -34,29 +35,41 @@ Diatheke is a command-line front-end to the SWORD Project (http://www.crosswire.
 
 Assuming you have installed all the dependencies (see (2) ), you should simply be able to unzip whetstone and run it with python:
 
-$ tar zxvf whetstone-0.0.1.tar.gz
-whetstone-0.0.1/
-whetstone-0.0.1/whetstone.py
-whetstone-0.0.1/whetstone.glade
-whetstone-0.0.1/verses.csv
-whetstone-0.0.1/LICENSE
-whetstone-0.0.1/README
-$ cd whetstone-0.0.1
-~/whetstone-0.0.1 $ python whetstone.py
+$ tar zxvf whetstone-0.0.2.tar.gz
+whetstone-0.0.2/
+whetstone-0.0.2/whetstone.py
+whetstone-0.0.2/whetstone.glade
+whetstone-0.0.2/verses.csv
+whetstone-0.0.2/LICENSE
+whetstone-0.0.2/README
+$ cd whetstone-0.0.2
+~/whetstone-0.0.2 $ python whetstone.py
 
 On first run, whetstone will create a blank database for you, and fill it with the memory verses contained in verses.csv, which may take a few seconds. This is a one-time operation.
+=============================================
+
+4. Upgrading from 0.0.1
+
+Follow the installation instructions in (3) but you can copy your database over into the new directory:
+
+$ cd whetstone-0.0.2
+~/whetstone-0.0.2 $ cp /path/to/whetstone-0.0.1/.pymv_db .
+
+This will retain all your additional verses and planners, although your planners will each lose their last date.
+
 
 =============================================
 
-4. Notes
 
-Whetstone 0.01 is very much in alpha quality - it's rough around the edges! Here's a few things to note:
+5. Notes
 
-1. The quiz page hasn't been implemented yet.
+Whetstone 0.0.2 is still very much in alpha quality - it's rough around the edges! Here's a few things to note:
 
-2. The menu's aren't functional (apart from the About button)
+1. The quiz page is now up and running, but only for Multiple Choice Quizzes (Guess verse from reference and guess reference from verse)
 
-3. ESV only at the moment, sorry
+2. The menu's aren't fully functional - Edit -> Properties and Help -> About work, but nothing else yet. 
+
+3. You can now choose which Bible translation you want, based on your installed SWORD modules.
 
 4. You'll get tonnes of feedback (and errors) in the command window
 
@@ -66,9 +79,11 @@ Whetstone 0.01 is very much in alpha quality - it's rough around the edges! Here
 
 7. In the planner section, you can open up the "manage planners", double-click on the planner name, and then double click on calendar dates to see the verses for those dates
 
+8. If you were running 0.0.1, your database will still work, but your planners will lose the last date in the plan
+
 =============================================
 
-5. Comments / FAQ
+6. Comments / FAQ
 
 Q. Have you tried $other_software (BibleMemorizer, Crosswire Flashcards, e-sword, etc, etc)
 
